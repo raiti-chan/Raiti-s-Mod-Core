@@ -1,0 +1,30 @@
+#--------------------------------------------US-lang
+
+item.comst.0.name=圧縮された石 8倍
+item.comst.1.name=圧縮された石 64倍
+item.comstoneingot.name=圧縮された石のインゴット
+
+item.emc.0.name=1EMC
+item.emc.1.name=2EMC
+item.emc.2.name=4EMC
+item.emc.3.name=8EMC
+item.emc.4.name=16EMC
+item.emc.5.name=32EMC
+item.emc.6.name=64EMC
+item.emc.7.name=128EMC
+item.emc.8.name=256EMC
+item.emc.9.name=512EMC
+item.emc.10.name=1024EMC
+
+item.emc.11.name=2KEMC
+item.emc.12.name=4KEMC
+item.emc.13.name=8KEMC
+item.emc.14.name=16KEMC
+item.emc.15.name=32KEMC
+item.emc.16.name=64KEMC
+item.emc.17.name=128KEMC
+item.emc.18.name=256KEMC
+item.emc.19.name=512KEMC
+item.emc.20.name=1024KEMC
+
+tile.comstoneingotblock.name=圧縮された石のブロック
