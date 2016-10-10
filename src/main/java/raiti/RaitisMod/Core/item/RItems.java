@@ -95,7 +95,6 @@ public class RItems {
 		GameRegistry.addShapelessRecipe(new ItemStack(emc,1,18), new ItemStack(emc,1,17), new ItemStack(emc,1,17));
 		GameRegistry.addShapelessRecipe(new ItemStack(emc,1,19), new ItemStack(emc,1,18), new ItemStack(emc,1,18));
 		GameRegistry.addShapelessRecipe(new ItemStack(emc,1,20), new ItemStack(emc,1,19), new ItemStack(emc,1,19));
-		GameRegistry.addShapelessRecipe(new ItemStack(emc,1,21), new ItemStack(emc,1,20), new ItemStack(emc,1,20));
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(emc,2,0), new ItemStack(emc,1,1));
 		GameRegistry.addShapelessRecipe(new ItemStack(emc,2,1), new ItemStack(emc,1,2));
@@ -117,7 +116,6 @@ public class RItems {
 		GameRegistry.addShapelessRecipe(new ItemStack(emc,2,17), new ItemStack(emc,1,18));
 		GameRegistry.addShapelessRecipe(new ItemStack(emc,2,18), new ItemStack(emc,1,19));
 		GameRegistry.addShapelessRecipe(new ItemStack(emc,2,19), new ItemStack(emc,1,20));
-		GameRegistry.addShapelessRecipe(new ItemStack(emc,2,20), new ItemStack(emc,1,21));
 		
 		
 	}

@@ -58,6 +58,7 @@ public class EMCItems extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIconFromDamage(int meta) {
+		if(this.iicons.length < meta) return null;
 		return this.iicons[meta];
 	}
 	

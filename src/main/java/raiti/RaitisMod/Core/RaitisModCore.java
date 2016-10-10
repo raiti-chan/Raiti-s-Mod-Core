@@ -16,6 +16,7 @@ import raiti.RaitisMod.Core.block.Blocks;
 import raiti.RaitisMod.Core.gui.GuiHandler;
 import raiti.RaitisMod.Core.item.RItems;
 import raiti.RaitisMod.Core.tool.Tools;
+import raiti.RaitisMod.Factory.FactoryRegister;
 
 
 /** <h1>RaitisModCore</h1>
@@ -34,6 +35,7 @@ public class RaitisModCore {
 		RItems.addItem();
 		Blocks.addBlock();
 		Tools.addTool();
+		FactoryRegister.RegisterPerInit(event);
 		System.out.println(Loader.isModLoaded("Avaritia"));
 	}
 	
@@ -41,7 +43,7 @@ public class RaitisModCore {
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(RaitisModCoreMain.INSTANCE, new GuiHandler());
 		RaitisModCoreMain.PROXY.registerTileEntity();
-		
+		FactoryRegister.RegisterInti(event);
 	}
 	
 	public static void posInit(FMLPostInitializationEvent event){
@@ -50,6 +52,7 @@ public class RaitisModCore {
 			GameRegistry.addShapelessRecipe(new ItemStack(RItems.emc,1,0), net.minecraft.init.Blocks.cobblestone, ObjHandler.philosStone);
 		}
 		
+		FactoryRegister.RegisterPosInit(event);
 		
 	}
 	
