@@ -1,5 +1,8 @@
 package raiti.RaitisMod.Factory.TileEntity;
 
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -10,7 +13,7 @@ import raiti.RaitisMod.Factory.Energy.EnergyBuffer;
 /**
  * Created by Raiti on 2016/10/10.
  */
-public class TileEntityThermalGenerator extends TileEntity implements EnergyBuffer{
+public class TileEntityThermalGenerator extends TileEntity implements EnergyBuffer,IInventory{
 	
 	private long BUFFER_ENERGY = 0;
 	
@@ -70,6 +73,67 @@ public class TileEntityThermalGenerator extends TileEntity implements EnergyBuff
 	
 	@Override
 	public boolean canReceiveEnergy() {
+		return false;
+	}
+	
+	@Override
+	public int getSizeInventory() {
+		return 0;
+	}
+	
+	
+	@Override
+	public ItemStack getStackInSlot(int p_70301_1_) {
+		return null;
+	}
+	
+	@Override
+	public ItemStack decrStackSize(int p_70298_1_, int p_70298_2_) {
+		return null;
+	}
+	
+	@Override
+	public ItemStack getStackInSlotOnClosing(int p_70304_1_) {
+		return null;
+	}
+	
+	@Override
+	public void setInventorySlotContents(int p_70299_1_, ItemStack p_70299_2_) {
+		
+	}
+	
+	@Override
+	public String getInventoryName() {
+		return null;
+	}
+	
+	@Override
+	public boolean hasCustomInventoryName() {
+		return false;
+	}
+	
+	@Override
+	public int getInventoryStackLimit() {
+		return 0;
+	}
+	
+	@Override
+	public boolean isUseableByPlayer(EntityPlayer p_70300_1_) {
+		return false;
+	}
+	
+	@Override
+	public void openInventory() {
+		
+	}
+	
+	@Override
+	public void closeInventory() {
+		
+	}
+	
+	@Override
+	public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
 		return false;
 	}
 }

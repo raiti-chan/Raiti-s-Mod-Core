@@ -28,7 +28,7 @@ public class AlotmoreChestGUI extends GuiContainer{
 	private IInventory lowerChestInventory , alotmorechestinventry;
 	
 	/**<B>コンストラクター</B><br>
-	 * @param p_i1072_1_
+	 *
 	 */
 	public AlotmoreChestGUI(IInventory plaInv, IInventory tileInv) {
 		super(new AlotmoreChestContainer(plaInv, tileInv));

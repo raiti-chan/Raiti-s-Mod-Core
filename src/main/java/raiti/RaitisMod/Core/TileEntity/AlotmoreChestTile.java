@@ -7,6 +7,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
+import net.minecraft.inventory.ISidedInventory;
 import raiti.RaitisMod.Core.container.AlotmoreChestContainer;
 
 import net.minecraft.entity.item.EntityItem;
@@ -31,7 +32,7 @@ import net.minecraft.tileentity.TileEntity;
  * 
  */
 public class AlotmoreChestTile extends TileEntity implements IInventory{
-	
+	ISidedInventory
 	private AlotmoreChestContainer container;
 	
 	private long MAXSIZE = Long.MAX_VALUE;
