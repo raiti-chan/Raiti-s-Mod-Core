@@ -3,12 +3,12 @@
  */
 package raiti.RaitisMod.Core.gui;
 
-import raiti.RaitisMod.Core.TileEntity.AlotmoreChestTile;
-import raiti.RaitisMod.Core.container.AlotmoreChestContainer;
+import raiti.RaitisMod.Core.TileEntity.BlackHallChestTile;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import raiti.RaitisMod.Core.container.BlackHallChestContainer;
 
 /** <h1>GuiHandler</h1>
  * <br>
@@ -28,8 +28,8 @@ public class GuiHandler implements IGuiHandler{
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		
 		if(ID == AlotmoreChestGUI) {
-			AlotmoreChestTile tile = (AlotmoreChestTile) world.getTileEntity(x, y, z);
-			return new AlotmoreChestContainer(player.inventory, tile);
+			BlackHallChestTile tile = (BlackHallChestTile) world.getTileEntity(x, y, z);
+			return new BlackHallChestContainer(player.inventory, tile);
 		}
 		
 		return null;
@@ -43,8 +43,8 @@ public class GuiHandler implements IGuiHandler{
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		
 		if(ID == AlotmoreChestGUI) {
-			AlotmoreChestTile tile = (AlotmoreChestTile) world.getTileEntity(x, y, z);
-			return new AlotmoreChestGUI(player.inventory, tile);
+			BlackHallChestTile tile = (BlackHallChestTile) world.getTileEntity(x, y, z);
+			return new BlackHallChestGUI(player.inventory, tile);
 		}
 		
 		return null;

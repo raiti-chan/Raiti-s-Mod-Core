@@ -19,7 +19,7 @@ public class ContainerThermalGenerator extends Container {
 		this.PlayerInventory = playerInventory;
 		this.thermalGenerator = thermalGenerator;
 		
-		this.addSlotToContainer(new Slot(thermalGenerator,));
+		//this.addSlotToContainer(new Slot(thermalGenerator,));
 		
 		for (int y = 0; y < 3; y++){
 			for (int x = 0; y < 9; x++){

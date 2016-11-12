@@ -17,16 +17,21 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 @Mod(modid = RaitisModCoreMain.MODID , version = RaitisModCoreMain.VERSION , name = RaitisModCoreMain.NAME , useMetadata = true)
 public class RaitisModCoreMain {
 	
+	@SuppressWarnings("WeakerAccess")
 	public static final String MODID = "RaitisModCoreMain";
+	@SuppressWarnings("WeakerAccess")
 	public static final String NAME = "Raiti's Mod Core";
+	@SuppressWarnings("WeakerAccess")
 	public static final String VERSION = "1.0";
 	
+	@SuppressWarnings("unused")
 	@Mod.Metadata
-	public static ModMetadata METADATA;
+	private static ModMetadata METADATA;
 	
 	@Mod.Instance("RaitisModCoreMain")
 	public static RaitisModCoreMain INSTANCE;
 	
+	@SuppressWarnings("WeakerAccess")
 	@SidedProxy(clientSide = "raiti.RaitisMod.Core.client.ClientProxy", serverSide = "raiti.RaitisMod.Core.server.CommonProxy")
 	public static CommonProxy PROXY;
 	

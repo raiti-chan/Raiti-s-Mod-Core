@@ -3,7 +3,7 @@
  */
 package raiti.RaitisMod.Core.server;
 
-import raiti.RaitisMod.Core.TileEntity.AlotmoreChestTile;
+import raiti.RaitisMod.Core.TileEntity.BlackHallChestTile;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.world.World;
@@ -22,7 +22,7 @@ public class CommonProxy {
 	}
 	
 	public void registerTileEntity() {
-		GameRegistry.registerTileEntity(AlotmoreChestTile.class, "AlotmoreChestTile");
+		GameRegistry.registerTileEntity(BlackHallChestTile.class, "BlackHallChestTile");
 		
 		//Factory=======================================================================================================
 		GameRegistry.registerTileEntity(TileEntityThermalGenerator.class, "ThermalGenerator");

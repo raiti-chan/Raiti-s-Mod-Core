@@ -3,7 +3,7 @@
  */
 package raiti.RaitisMod.Core.client;
 
-import raiti.RaitisMod.Core.TileEntity.AlotmoreChestTile;
+import raiti.RaitisMod.Core.TileEntity.BlackHallChestTile;
 import raiti.RaitisMod.Core.server.CommonProxy;
 
 import cpw.mods.fml.client.FMLClientHandler;
@@ -26,7 +26,7 @@ public class ClientProxy extends CommonProxy{
 	
 	@Override
 	public void registerTileEntity() {
-		GameRegistry.registerTileEntity(AlotmoreChestTile.class, "AlotmoreChestTile");
+		GameRegistry.registerTileEntity(BlackHallChestTile.class, "BlackHallChestTile");
 		
 		//Factory=======================================================================================================
 		GameRegistry.registerTileEntity(TileEntityThermalGenerator.class, "ThermalGenerator");

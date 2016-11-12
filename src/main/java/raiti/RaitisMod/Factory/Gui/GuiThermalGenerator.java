@@ -16,7 +16,7 @@ public class GuiThermalGenerator  extends GuiContainer{
 	
 	
 	public GuiThermalGenerator() {
-		super(new ContainerThermalGenerator());
+		super(new ContainerThermalGenerator(null,null));
 		
 	}
 	

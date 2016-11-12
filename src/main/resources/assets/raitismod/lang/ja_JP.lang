@@ -28,3 +28,10 @@ item.emc.19.name=512KEMC
 item.emc.20.name=1024KEMC
 
 tile.comstoneingotblock.name=圧縮された石のブロック
+
+
+tile.BlackHallChest.name=ブラックホールチェスト
+GUI.BlackHallChest.name=ブラックホールチェスト
+itemStack.BlackHallChestItem.item.name=アイテム:
+itemStack.BlackHallChestItem.size.name=サイズ:
+itemStack.BlackHallChestItem.null.name=アイテム無し

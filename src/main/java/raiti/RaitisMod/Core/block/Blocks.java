@@ -10,8 +10,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import raiti.RaitisMod.Core.item.blockItem.BlackHallChestItem;
 
 /** <h1>ManyBlock</h1>
  * 様々な通常ブロックを追加します<br>
@@ -40,7 +40,7 @@ public class Blocks {
 	public static Block dirtyEmeraldblock = new DirtyIronBlock(net.minecraft.init.Items.emerald,0,"Emerald","Emerald");
 	public static Block dirtylapisblock = new DirtyIronBlock(net.minecraft.init.Items.dye,4,"Lapislazuli","lapislazuli");
 	
-	public static Block alotmorechest = new AlotmoreChest();
+	public static Block alotmorechest = new BlackHallChestBlock();
 	
 	public static Block testBlock = new TestBlock();
 	
@@ -62,7 +62,7 @@ public class Blocks {
 		GameRegistry.registerBlock(dirtyEmeraldblock, "dirtyemeraldblock");
 		GameRegistry.registerBlock(dirtylapisblock, "dirtylapislazuliblock");
 		
-		GameRegistry.registerBlock(alotmorechest, "alotmorechest");
+		GameRegistry.registerBlock(alotmorechest, BlackHallChestItem.class, "alotmorechest");
 		
 		GameRegistry.registerBlock(testBlock, "testblock");
 		

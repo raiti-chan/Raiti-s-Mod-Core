@@ -27,9 +27,10 @@ import raiti.RaitisMod.Factory.FactoryRegister;
  */
 public class RaitisModCore {
 	
+	@SuppressWarnings("WeakerAccess")
 	public static ConfigRegister CONFIG = new ConfigRegister();
 	
-	public static void preinit(FMLPreInitializationEvent event) {
+	static void preinit(FMLPreInitializationEvent event) {
 		CONFIG = new ConfigRegister();
 		CONFIG.load();
 		RItems.addItem();
@@ -39,14 +40,14 @@ public class RaitisModCore {
 		System.out.println(Loader.isModLoaded("Avaritia"));
 	}
 	
-	public static void init(FMLInitializationEvent event){
+	static void init(FMLInitializationEvent event){
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(RaitisModCoreMain.INSTANCE, new GuiHandler());
 		RaitisModCoreMain.PROXY.registerTileEntity();
 		FactoryRegister.RegisterInti(event);
 	}
 	
-	public static void posInit(FMLPostInitializationEvent event){
+	static void posInit(FMLPostInitializationEvent event){
 		
 		if(CONFIG.getBooleanMapData("ProjectE") && Loader.isModLoaded("ProjectE")){
 			GameRegistry.addShapelessRecipe(new ItemStack(RItems.emc,1,0), net.minecraft.init.Blocks.cobblestone, ObjHandler.philosStone);
