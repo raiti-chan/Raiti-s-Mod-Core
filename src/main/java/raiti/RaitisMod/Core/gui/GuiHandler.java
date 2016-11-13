@@ -3,7 +3,7 @@
  */
 package raiti.RaitisMod.Core.gui;
 
-import raiti.RaitisMod.Core.TileEntity.BlackHallChestTile;
+import raiti.RaitisMod.Core.TileEntity.BlackHoleChestTile;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,7 +28,7 @@ public class GuiHandler implements IGuiHandler{
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		
 		if(ID == AlotmoreChestGUI) {
-			BlackHallChestTile tile = (BlackHallChestTile) world.getTileEntity(x, y, z);
+			BlackHoleChestTile tile = (BlackHoleChestTile) world.getTileEntity(x, y, z);
 			return new BlackHallChestContainer(player.inventory, tile);
 		}
 		
@@ -43,8 +43,8 @@ public class GuiHandler implements IGuiHandler{
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		
 		if(ID == AlotmoreChestGUI) {
-			BlackHallChestTile tile = (BlackHallChestTile) world.getTileEntity(x, y, z);
-			return new BlackHallChestGUI(player.inventory, tile);
+			BlackHoleChestTile tile = (BlackHoleChestTile) world.getTileEntity(x, y, z);
+			return new BlackHoleChestGUI(player.inventory, tile);
 		}
 		
 		return null;

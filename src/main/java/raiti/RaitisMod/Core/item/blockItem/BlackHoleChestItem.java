@@ -15,9 +15,9 @@ import java.util.List;
  *
  * @author Raiti-chan
  */
-public class BlackHallChestItem extends ItemBlock {
+public class BlackHoleChestItem extends ItemBlock {
 	
-	public BlackHallChestItem(Block block) {
+	public BlackHoleChestItem(Block block) {
 		super(block);
 	}
 	
@@ -29,10 +29,10 @@ public class BlackHallChestItem extends ItemBlock {
 		NBTTagCompound compound = tags != null ? tags.getCompoundTag("ChestItem") : null;
 		if (compound != null) {
 			ItemStack stack = ItemStack.loadItemStackFromNBT(compound.getCompoundTag("Item"));
-			if (stack != null) list.add(StatCollector.translateToLocal("itemStack.BlackHallChestItem.item.name") + stack.getDisplayName());
-			if (stack != null)list.add(StatCollector.translateToLocal("itemStack.BlackHallChestItem.size.name") + compound.getLong("Size"));
-			if (stack == null)list.add(StatCollector.translateToLocal("itemStack.BlackHallChestItem.null.name"));
-		} else list.add(StatCollector.translateToLocal("itemStack.BlackHallChestItem.null.name"));
+			if (stack != null) list.add(StatCollector.translateToLocal("itemStack.BlackHoleChestItem.item.name") + stack.getDisplayName());
+			if (stack != null)list.add(StatCollector.translateToLocal("itemStack.BlackHoleChestItem.size.name") + compound.getLong("Size"));
+			if (stack == null)list.add(StatCollector.translateToLocal("itemStack.BlackHoleChestItem.null.name"));
+		} else list.add(StatCollector.translateToLocal("itemStack.BlackHoleChestItem.null.name"));
 		
 	}
 	

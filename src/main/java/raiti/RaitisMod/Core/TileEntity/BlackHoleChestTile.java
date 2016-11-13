@@ -15,13 +15,13 @@ import net.minecraft.util.StatCollector;
 import raiti.RaitisMod.Core.container.BlackHallChestContainer;
 
 /**
- * <h1>BlackHallChestTile</h1>
+ * <h1>BlackHoleChestTile</h1>
  * <br>
  *
  * @author Raiti
  * @version 1.0.0
  */
-public class BlackHallChestTile extends TileEntity implements ISidedInventory {
+public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	
 	
 	@SuppressWarnings({"FieldCanBeLocal", "unused"})
@@ -292,7 +292,7 @@ public class BlackHallChestTile extends TileEntity implements ISidedInventory {
 	 */
 	@Override
 	public String getInventoryName() {
-		return StatCollector.translateToLocal("GUI.BlackHallChest.name");
+		return StatCollector.translateToLocal("GUI.BlackHoleChest.name");
 	}
 	
 	

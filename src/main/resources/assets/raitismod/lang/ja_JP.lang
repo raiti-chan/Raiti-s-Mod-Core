@@ -30,8 +30,8 @@ item.emc.20.name=1024KEMC
 tile.comstoneingotblock.name=圧縮された石のブロック
 
 
-tile.BlackHallChest.name=ブラックホールチェスト
-GUI.BlackHallChest.name=ブラックホールチェスト
-itemStack.BlackHallChestItem.item.name=アイテム:
-itemStack.BlackHallChestItem.size.name=サイズ:
-itemStack.BlackHallChestItem.null.name=アイテム無し
+tile.BlackHoleChest.name=ブラックホールチェスト
+GUI.BlackHoleChest.name=ブラックホールチェスト
+itemStack.BlackHoleChestItem.item.name=アイテム:
+itemStack.BlackHoleChestItem.size.name=サイズ:
+itemStack.BlackHoleChestItem.null.name=アイテム無し

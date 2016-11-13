@@ -3,7 +3,7 @@
  */
 package raiti.RaitisMod.Core.container;
 
-import raiti.RaitisMod.Core.TileEntity.BlackHallChestTile;
+import raiti.RaitisMod.Core.TileEntity.BlackHoleChestTile;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -22,13 +22,13 @@ import net.minecraft.item.ItemStack;
 public class BlackHallChestContainer extends Container {
 	
 	
-	private BlackHallChestTile chest;
+	private BlackHoleChestTile chest;
 	@SuppressWarnings("FieldCanBeLocal")
 	private InventoryPlayer playerInventry;
 	
 	
 	public BlackHallChestContainer(IInventory plaInv, IInventory tileInv) {
-		this.chest = (BlackHallChestTile) tileInv;
+		this.chest = (BlackHoleChestTile) tileInv;
 		chest.setContainer(this);
 		this.playerInventry = (InventoryPlayer) plaInv;
 		
@@ -222,7 +222,7 @@ class AlotmoreChestSlot extends Slot {
 	@Override
 	public boolean isItemValid(ItemStack inStack) {
 		if (this.in) {
-			BlackHallChestTile tile = (BlackHallChestTile) this.inventory;
+			BlackHoleChestTile tile = (BlackHoleChestTile) this.inventory;
 			if (tile.getStackInSlot(0) == null) {
 				return true;
 			} else if (tile.getStackInSlot(0).isItemEqual(inStack) && tile.getSize() + inStack.stackSize <= tile.getMaxSize()) {
@@ -235,7 +235,7 @@ class AlotmoreChestSlot extends Slot {
 	
 	@Override
 	public int getSlotStackLimit() {
-		BlackHallChestTile tile = (BlackHallChestTile) this.inventory;
+		BlackHoleChestTile tile = (BlackHoleChestTile) this.inventory;
 		long limit = tile.getMaxSize() - tile.getSize();
 		return limit < 64 ? (int) limit : 64;
 	}

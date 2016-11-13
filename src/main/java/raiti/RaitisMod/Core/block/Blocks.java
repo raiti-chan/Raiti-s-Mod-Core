@@ -11,7 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import raiti.RaitisMod.Core.item.blockItem.BlackHallChestItem;
+import raiti.RaitisMod.Core.item.blockItem.BlackHoleChestItem;
 
 /** <h1>ManyBlock</h1>
  * 様々な通常ブロックを追加します<br>
@@ -19,6 +19,7 @@ import raiti.RaitisMod.Core.item.blockItem.BlackHallChestItem;
  * @version 1.0.0
  * 
  */
+@SuppressWarnings("WeakerAccess")
 public class Blocks {
 	//-------------------------------------コンストラクター
 	/**
@@ -30,19 +31,19 @@ public class Blocks {
 	
 	//==================================================================================================================
 	
-	public static Block comstonebl = BlockUtil.CreatBlock("comstoneingotblock", "raitismod:comstone_block", CreativeTabs.tabBlock, Material.rock,25.0F,2000.0F,Block.soundTypeMetal,-1,-1.0F,"pickaxe",3);
+	public static final Block comstonebl = BlockUtil.CreatBlock("comstoneingotblock", "raitismod:comstone_block", CreativeTabs.tabBlock, Material.rock,25.0F,2000.0F,Block.soundTypeMetal,-1,-1.0F,"pickaxe",3);
 	
-	public static Block dirtycoalblock = new DirtyIronBlock(net.minecraft.init.Items.coal,0,"Coal","coal");
-	public static Block dirtyironblock = new DirtyIronBlock(net.minecraft.init.Items.iron_ingot,0,"Iron","iron");
-	public static Block dirtygoldblock = new DirtyIronBlock(net.minecraft.init.Items.gold_ingot,0,"Gold","gold");
-	public static Block dirtyredstoneblock = new DirtyIronBlock(net.minecraft.init.Items.redstone,0,"Redstone","redstone");
-	public static Block dirtydiamondblock = new DirtyIronBlock(net.minecraft.init.Items.diamond,0,"Diamond","diamond");
-	public static Block dirtyEmeraldblock = new DirtyIronBlock(net.minecraft.init.Items.emerald,0,"Emerald","Emerald");
-	public static Block dirtylapisblock = new DirtyIronBlock(net.minecraft.init.Items.dye,4,"Lapislazuli","lapislazuli");
+	public static final Block dirtycoalblock = new DirtyIronBlock(net.minecraft.init.Items.coal,0,"Coal","coal");
+	public static final Block dirtyironblock = new DirtyIronBlock(net.minecraft.init.Items.iron_ingot,0,"Iron","iron");
+	public static final Block dirtygoldblock = new DirtyIronBlock(net.minecraft.init.Items.gold_ingot,0,"Gold","gold");
+	public static final Block dirtyredstoneblock = new DirtyIronBlock(net.minecraft.init.Items.redstone,0,"Redstone","redstone");
+	public static final Block dirtydiamondblock = new DirtyIronBlock(net.minecraft.init.Items.diamond,0,"Diamond","diamond");
+	public static final Block dirtyEmeraldblock = new DirtyIronBlock(net.minecraft.init.Items.emerald,0,"Emerald","Emerald");
+	public static final Block dirtylapisblock = new DirtyIronBlock(net.minecraft.init.Items.dye,4,"Lapislazuli","lapislazuli");
 	
-	public static Block alotmorechest = new BlackHallChestBlock();
+	public static final Block alotmorechest = new BlackHoleChestBlock();
 	
-	public static Block testBlock = new TestBlock();
+	public static final Block testBlock = new TestBlock();
 	
 	//==================================================================================================================
 	
@@ -62,7 +63,7 @@ public class Blocks {
 		GameRegistry.registerBlock(dirtyEmeraldblock, "dirtyemeraldblock");
 		GameRegistry.registerBlock(dirtylapisblock, "dirtylapislazuliblock");
 		
-		GameRegistry.registerBlock(alotmorechest, BlackHallChestItem.class, "alotmorechest");
+		GameRegistry.registerBlock(alotmorechest, BlackHoleChestItem.class, "alotmorechest");
 		
 		GameRegistry.registerBlock(testBlock, "testblock");
 		

@@ -3,7 +3,7 @@
  */
 package raiti.RaitisMod.Core.gui;
 
-import raiti.RaitisMod.Core.TileEntity.BlackHallChestTile;
+import raiti.RaitisMod.Core.TileEntity.BlackHoleChestTile;
 import raiti.RaitisMod.Core.container.BlackHallChestContainer;
 
 import org.lwjgl.opengl.GL11;
@@ -20,7 +20,7 @@ import net.minecraft.util.ResourceLocation;
  * @version 1.0.0
  * 
  */
-public class BlackHallChestGUI extends GuiContainer{
+public class BlackHoleChestGUI extends GuiContainer{
 	
 	private static final ResourceLocation texture = new ResourceLocation("raitismod","textures/gui/alotmorechest.png");
 	
@@ -30,7 +30,7 @@ public class BlackHallChestGUI extends GuiContainer{
 	 *
 	 */
 	@SuppressWarnings("WeakerAccess")
-	public BlackHallChestGUI(IInventory plaInv, IInventory tileInv) {
+	public BlackHoleChestGUI(IInventory plaInv, IInventory tileInv) {
 		super(new BlackHallChestContainer(plaInv, tileInv));
 		lowerChestInventory = plaInv;
 		alotmorechestinventry = tileInv;
@@ -44,7 +44,7 @@ public class BlackHallChestGUI extends GuiContainer{
 	protected void drawGuiContainerForegroundLayer(int p_146979_1_, int p_146979_2_) {
 		this.fontRendererObj.drawString(this.lowerChestInventory.hasCustomInventoryName() ? this.lowerChestInventory.getInventoryName() : I18n.format(this.lowerChestInventory.getInventoryName()), 8, this.ySize -96 +2, 4210752);
 		this.fontRendererObj.drawString(this.alotmorechestinventry.hasCustomInventoryName() ? this.alotmorechestinventry.getInventoryName() : I18n.format(this.alotmorechestinventry.getInventoryName()), 8, 6, 4210752);
-		String text = ((BlackHallChestTile)this.alotmorechestinventry).getSize()+": Items";
+		String text = ((BlackHoleChestTile)this.alotmorechestinventry).getSize()+": Items";
 		this.fontRendererObj.drawString(text, this.xSize-(35+((text.length()-7)*6)), 60, 4210752);
 		ItemStack item = this.alotmorechestinventry.getStackInSlot(0);
 		if(item != null) {
