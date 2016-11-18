@@ -3,7 +3,16 @@
 item.RaitisModCore.CompressedStone.0.name=圧縮された石 8倍
 item.RaitisModCore.CompressedStone.1.name=圧縮された石 64倍
 item.RaitisModCore.CompressedStoneIngot.name=圧縮された石のインゴット
-tileRaitisModCore.CompressedStone.name=圧縮された石のブロック
+tile.RaitisModCore.CompressedStoneIngotBlock.name=圧縮された石のブロック
+
+item.RaitisModCore.OreCrusheHammer.name=鉱石粉砕ハンマー
+tile.RaitisModCore.DirtyCoalBlock.name=汚れた石炭ブロック
+tile.RaitisModCore.DirtyIronBlock.name=汚れた鉄ブロック
+tile.RaitisModCore.DirtyGoldBlock.name=汚れた金ブロック
+tile.RaitisModCore.DirtyRedstoneBlock.name=汚れたレッドストーンブロック
+tile.RaitisModCore.DirtyDiamondBlock.name=汚れたダイアモンドブロック
+tile.RaitisModCore.DirtyEmeraldBlock.name=汚れたエメラルドブロック
+tile.RaitisModCore.DirtyLapislazuliBlock.name=汚れたラピスラズリブロック
 
 item.RaitisModCore.EMC.0.name=1EMC
 item.RaitisModCore.EMC.1.name=2EMC
@@ -16,7 +25,6 @@ item.RaitisModCore.EMC.7.name=128EMC
 item.RaitisModCore.EMC.8.name=256EMC
 item.RaitisModCore.EMC.9.name=512EMC
 item.RaitisModCore.EMC.10.name=1024EMC
-
 item.RaitisModCore.EMC.11.name=2KEMC
 item.RaitisModCore.EMC.12.name=4KEMC
 item.RaitisModCore.EMC.13.name=8KEMC
@@ -27,8 +35,6 @@ item.RaitisModCore.EMC.17.name=128KEMC
 item.RaitisModCore.EMC.18.name=256KEMC
 item.RaitisModCore.EMC.19.name=512KEMC
 item.RaitisModCore.EMC.20.name=1024KEMC
-
-
 
 tile.RaitisModCore.BlackHoleChest.name=ブラックホールチェスト
 GUI.RaitisModCore.BlackHoleChest.name=ブラックホールチェスト

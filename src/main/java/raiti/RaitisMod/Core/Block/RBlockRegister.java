@@ -27,7 +27,7 @@ import java.lang.reflect.Field;
 public class RBlockRegister {
 	private RBlockRegister() {}
 	//==================================================================================================================
-	public static final RBlock comstonebl = BlockUtil.createBlock("comstoneingotblock", "comstone_block", CreativeTabs.tabBlock, Material.rock,25.0F,2000.0F,Block.soundTypeMetal,-1,-1.0F,"pickaxe",3);
+	public static final RBlock comstonebl = BlockUtil.createBlock("CompressedStoneIngotBlock", "compressed_stone_ingot_block", CreativeTabs.tabBlock, Material.rock,25.0F,2000.0F,Block.soundTypeMetal,-1,-1.0F,"pickaxe",3);
 	
 	public static final RBlock dirtycoalblock = new DirtyIronBlock(net.minecraft.init.Items.coal,0,"Coal","coal");
 	public static final RBlock dirtyironblock = new DirtyIronBlock(net.minecraft.init.Items.iron_ingot,0,"Iron","iron");
