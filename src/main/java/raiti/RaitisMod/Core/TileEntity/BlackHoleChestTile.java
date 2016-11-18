@@ -12,20 +12,21 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
-import raiti.RaitisMod.Core.container.BlackHallChestContainer;
+import raiti.RaitisMod.Core.Container.BlackHoleChestContainer;
 
 /**
- * <h1>BlackHoleChestTile</h1>
- * <br>
+ * ブラックホールチェストのたいるえんちちー
+ * <br>Created by Raiti-chan on 2016/11/18.
  *
- * @author Raiti
+ * @author Raiti-chan
  * @version 1.0.0
+ * @since 1.0.0
  */
 public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	
 	
 	@SuppressWarnings({"FieldCanBeLocal", "unused"})
-	private BlackHallChestContainer container;
+	private BlackHoleChestContainer container;
 	
 	private long MAXSIZE = Long.MAX_VALUE;
 	
@@ -34,16 +35,10 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	private ItemStack stack = null;
 	
 	
-	public void setContainer(BlackHallChestContainer container) {
+	public void setContainer(BlackHoleChestContainer container) {
 		this.container = container;
 	}
 	
-	/**
-	 * <h1>readFromNBT</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.tileentity.TileEntity#readFromNBT(net.minecraft.nbt.NBTTagCompound)
-	 */
 	@Override
 	public void readFromNBT(NBTTagCompound par1NBTTagCompound) {
 		super.readFromNBT(par1NBTTagCompound);
@@ -52,12 +47,6 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		this.stack = ItemStack.loadItemStackFromNBT(compound);
 	}
 	
-	/**
-	 * <h1>writeToNBT</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.tileentity.TileEntity#writeToNBT(net.minecraft.nbt.NBTTagCompound)
-	 */
 	@Override
 	public void writeToNBT(NBTTagCompound par1NBTTagCompound) {
 		super.writeToNBT(par1NBTTagCompound);
@@ -67,7 +56,7 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		par1NBTTagCompound.setTag("Item", compound);
 	}
 	
-	public NBTTagCompound writeToNBTOfItem(NBTTagCompound compound){
+	public NBTTagCompound writeToNBTOfItem(NBTTagCompound compound) {
 		NBTTagCompound chestItemCompound = new NBTTagCompound();
 		chestItemCompound.setLong("Size", this.size);
 		NBTTagCompound compound1 = new NBTTagCompound();
@@ -77,12 +66,6 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		return compound;
 	}
 	
-	/**
-	 * <h1>getDescriptionPacket</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.tileentity.TileEntity#getDescriptionPacket()
-	 */
 	@Override
 	public Packet getDescriptionPacket() {
 		NBTTagCompound nbtTagCompound = new NBTTagCompound();
@@ -90,12 +73,6 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, nbtTagCompound);
 	}
 	
-	/**
-	 * <h1>onDataPacket</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.tileentity.TileEntity#onDataPacket(net.minecraft.network.NetworkManager, net.minecraft.network.play.server.S35PacketUpdateTileEntity)
-	 */
 	@Override
 	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
 		this.readFromNBT(pkt.func_148857_g());
@@ -105,20 +82,33 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	 * <h1>getSize</h1>
 	 * 内容量の取得<br>
 	 *
-	 * @return long
+	 * @return 内容量
 	 */
 	public long getSize() {
 		return this.size;
 	}
 	
+	/**
+	 * 内容量のセット
+	 *
+	 * @param size セットする内容量
+	 */
 	public void setSize(long size) {
 		this.size = size;
 	}
 	
+	/**
+	 * 中身のセット
+	 *
+	 * @param stack ItemStack
+	 */
 	public void setStack(ItemStack stack) {
 		this.stack = stack;
 	}
 	
+	/**
+	 * 中身を初期化
+	 */
 	public void itemClear() {
 		this.size = 0;
 		this.stack = null;
@@ -136,24 +126,12 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		return stack;
 	}
 	
-	/**
-	 * <h1>getSizeInventory</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#getSizeInventory()
-	 */
 	@Override
 	public int getSizeInventory() {
 		return 2;
 	}
 	
 	
-	/**
-	 * <h1>getStackInSlot</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#getStackInSlot(int)
-	 */
 	@Override
 	public ItemStack getStackInSlot(int index) {
 		if (stack != null) {
@@ -174,13 +152,12 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		
 	}
 	
-	
 	/**
-	 * <h1>decrStackSize</h1>
-	 * オーバーライド<br>
-	 * アイテムをとろうとしたとき
+	 * スロットから取り出そうとしたとき
 	 *
-	 * @see net.minecraft.inventory.IInventory#decrStackSize(int, int)
+	 * @param index スロットインデックス
+	 * @param dec   サイズ
+	 * @return 不明
 	 */
 	@Override
 	public ItemStack decrStackSize(int index, int dec) {
@@ -233,10 +210,10 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	
 	
 	/**
-	 * <h1>setInventorySlotContents</h1>
-	 * オーバーライド<br>
 	 * アイテムをスロットに置いたとき
 	 *
+	 * @param index スロットインデックス
+	 * @param stack 置いたアイテム
 	 * @see net.minecraft.inventory.IInventory#setInventorySlotContents(int, net.minecraft.item.ItemStack)
 	 */
 	@Override
@@ -262,19 +239,12 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		
 	}
 	
-	/**
-	 * <h1>getStackInSlotOnClosing</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#getStackInSlotOnClosing(int)
-	 */
 	@Override
 	public ItemStack getStackInSlotOnClosing(int par) {
 		return null;
 	}
 	
 	/**
-	 * <h1>getMaxSize</h1>
 	 * 貯蔵限界を返します<br>
 	 *
 	 * @return 貯蔵限界
@@ -283,88 +253,37 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		return MAXSIZE;
 	}
 	
-	
-	/**
-	 * <h1>getInventoryName</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#getInventoryName()
-	 */
 	@Override
 	public String getInventoryName() {
-		return StatCollector.translateToLocal("GUI.BlackHoleChest.name");
+		return StatCollector.translateToLocal("GUI.RaitisModCore.BlackHoleChest.name");
 	}
 	
-	
-	/**
-	 * <h1>hasCustomInventoryName</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#hasCustomInventoryName()
-	 */
 	@Override
 	public boolean hasCustomInventoryName() {
 		return true;
 	}
 	
-	
-	/**
-	 * <h1>getInventoryStackLimit</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#getInventoryStackLimit()
-	 */
 	@Override
 	public int getInventoryStackLimit() {
 		return 64;
 	}
 	
-	
-	/**
-	 * <h1>isUseableByPlayer</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#isUseableByPlayer(net.minecraft.entity.player.EntityPlayer)
-	 */
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer p_70300_1_) {
 		// TODO 自動生成されたメソッド・スタブ
 		return true;
 	}
 	
-	
-	/**
-	 * <h1>openInventory</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#openInventory()
-	 */
 	@Override
 	public void openInventory() {
-		// TODO 自動生成されたメソッド・スタブ
 		
 	}
 	
-	
-	/**
-	 * <h1>closeInventory</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#closeInventory()
-	 */
 	@Override
 	public void closeInventory() {
-		// TODO 自動生成されたメソッド・スタブ
 		
 	}
 	
-	
-	/**
-	 * <h1>isItemValidForSlot</h1>
-	 * オーバーライド
-	 *
-	 * @see net.minecraft.inventory.IInventory#isItemValidForSlot(int, net.minecraft.item.ItemStack)
-	 */
 	@Override
 	public boolean isItemValidForSlot(int slot, ItemStack item) {
 		return this.stack == null || (this.stack.isItemEqual(item) && size < MAXSIZE);

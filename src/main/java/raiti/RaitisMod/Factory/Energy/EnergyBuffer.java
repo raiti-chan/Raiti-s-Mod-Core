@@ -1,8 +1,14 @@
 package raiti.RaitisMod.Factory.Energy;
 
 /**
- * Created by Raiti on 2016/10/10.
+ *
+ * <br>Created by Raiti-chan on 2016/11/18.
+ *
+ * @author Raiti-chan
+ * @version 1.0.0
+ * @since 1.0.0
  */
+@SuppressWarnings({"UnnecessaryInterfaceModifier", "unused"})
 public interface EnergyBuffer {
 	
 	/**
@@ -19,7 +25,7 @@ public interface EnergyBuffer {
 	
 	/**
 	 * エネルギーをバッファーに追加します
-	 * @param addEnelgy 追加するエネルギー
+	 * @param addEnergy 追加するエネルギー
 	 * @return 余ったエネルギー
 	 */
 	public long addBufferEnergy(long addEnergy);
