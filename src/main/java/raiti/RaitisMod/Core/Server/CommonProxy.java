@@ -20,7 +20,17 @@ import raiti.RaitisMod.Factory.TileEntity.TileEntityThermalGenerator;
 public class CommonProxy {
 	
 	/**
+	 * 空いてるレンダ―IDを取得しますが{@link CommonProxy}では-1を返します。
+	 *
+	 * @return -1
+	 */
+	public int getNewRenderType() {
+		return -1;
+	}
+	
+	/**
 	 * ワールドを取得しますが、{@link CommonProxy}ではnullを返します。<br>
+	 *
 	 * @return null
 	 */
 	@SuppressWarnings("unused")
@@ -39,9 +49,16 @@ public class CommonProxy {
 	}
 	
 	/**
-	 * {@link net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer}をブロックやアイテムに関連付けるメソッドです<br>
-	 *     {@link CommonProxy}では何も行いません
+	 * レンダ―をレジスターに登録するメソッド<br>
+	 * {@link CommonProxy}では何も行いません
 	 */
-	public void registerTileEntitySpecialRenderer() {}
+	public void registerRenderer() {
+	}
 	
+	/**
+	 * {@link net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer}をブロックやアイテムに関連付けるメソッドです<br>
+	 * {@link CommonProxy}では何も行いません
+	 */
+	public void registerTileEntitySpecialRenderer() {
+	}
 }

@@ -51,6 +51,7 @@ public class RaitisModCore {
 		NetworkRegistry.INSTANCE.registerGuiHandler(RaitisModCoreMain.INSTANCE, new GuiHandler());
 		RaitisModCoreMain.PROXY.registerTileEntity();
 		RaitisModCoreMain.PROXY.registerTileEntitySpecialRenderer();
+		RaitisModCoreMain.PROXY.registerRenderer();
 		FactoryRegister.RegisterInti(event);
 	}
 	

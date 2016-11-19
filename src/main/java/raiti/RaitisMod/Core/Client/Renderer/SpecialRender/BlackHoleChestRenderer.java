@@ -1,4 +1,4 @@
-package raiti.RaitisMod.Core.Client.renderer;
+package raiti.RaitisMod.Core.Client.Renderer.SpecialRender;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import raiti.RaitisMod.Core.RaitisModCoreMain;
 import raiti.RaitisMod.Core.TileEntity.BlackHoleChestTile;
-import raiti.RaitisMod.Core.Client.renderer.model.BlackHoleChestModel;
+import raiti.RaitisMod.Core.Client.Renderer.model.BlackHoleChestModel;
 
 import java.nio.FloatBuffer;
 import java.util.Random;
@@ -24,13 +24,13 @@ import java.util.Random;
  * @since 1.0.0
  */
 public class BlackHoleChestRenderer extends TileEntitySpecialRenderer {
-	private static final ResourceLocation TEXTURE_END_SKY = new ResourceLocation("textures/environment/end_sky.png");
-	private static final ResourceLocation TEXTURE_END_PORTAL = new ResourceLocation("textures/entity/end_portal.png");
+	private static final ResourceLocation TEXTURE_END_SKY = new ResourceLocation("minecraft:textures/environment/end_sky.png");
+	private static final ResourceLocation TEXTURE_END_PORTAL = new ResourceLocation("minecraft:textures/entity/end_portal.png");
 	private static final ResourceLocation TEXTURE_MODEL = new ResourceLocation(RaitisModCoreMain.MOD_ID+":textures/model/blackhole_chest.png");
 	private static final Random RANDOM = new Random(31100L);
 	private FloatBuffer floatBuffer = GLAllocation.createDirectFloatBuffer(16);
 	
-	private void renderTileEntityAt(double x, double y, double z, float f) {
+	private void renderTileEntityAt(double x, double y, double z) {
 		
 		BlackHoleChestModel model = new BlackHoleChestModel();
 		
@@ -253,7 +253,7 @@ public class BlackHoleChestRenderer extends TileEntitySpecialRenderer {
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float f) {
 		if (tile instanceof BlackHoleChestTile) {
-			renderTileEntityAt(x, y, z, f);
+			renderTileEntityAt(x, y, z);
 		}
 	}
 	

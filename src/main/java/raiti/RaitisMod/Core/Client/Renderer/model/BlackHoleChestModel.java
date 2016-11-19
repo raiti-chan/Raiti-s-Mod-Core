@@ -1,4 +1,4 @@
-package raiti.RaitisMod.Core.Client.renderer.model;
+package raiti.RaitisMod.Core.Client.Renderer.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

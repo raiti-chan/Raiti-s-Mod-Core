@@ -25,7 +25,7 @@ import net.minecraft.item.ItemStack;
  */
 public class OreCrusheHammer extends RItemTool{
 	
-	private static final Set canHarvestBlock = Sets.newHashSet(RBlockRegister.dirtyironblock);
+	private static final Set canHarvestBlock = Sets.newHashSet(RBlockRegister.dirtyOreBlock);
 	
 	public OreCrusheHammer() {
 		super(0, ORE_CRUSHE_HAMMER, canHarvestBlock);

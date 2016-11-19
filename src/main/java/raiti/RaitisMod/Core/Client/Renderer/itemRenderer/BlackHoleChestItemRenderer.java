@@ -1,4 +1,4 @@
-package raiti.RaitisMod.Core.Client.renderer.itemRenderer;
+package raiti.RaitisMod.Core.Client.Renderer.itemRenderer;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.ItemStack;

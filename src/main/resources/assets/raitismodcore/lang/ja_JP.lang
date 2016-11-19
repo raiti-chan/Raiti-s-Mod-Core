@@ -5,14 +5,16 @@ item.RaitisModCore.CompressedStone.1.name=圧縮された石 64倍
 item.RaitisModCore.CompressedStoneIngot.name=圧縮された石のインゴット
 tile.RaitisModCore.CompressedStoneIngotBlock.name=圧縮された石のブロック
 
+tile.RaitisModCore.SolidWater.name=固形水源
+
 item.RaitisModCore.OreCrusheHammer.name=鉱石粉砕ハンマー
-tile.RaitisModCore.DirtyCoalBlock.name=汚れた石炭ブロック
-tile.RaitisModCore.DirtyIronBlock.name=汚れた鉄ブロック
-tile.RaitisModCore.DirtyGoldBlock.name=汚れた金ブロック
-tile.RaitisModCore.DirtyRedstoneBlock.name=汚れたレッドストーンブロック
-tile.RaitisModCore.DirtyDiamondBlock.name=汚れたダイアモンドブロック
-tile.RaitisModCore.DirtyEmeraldBlock.name=汚れたエメラルドブロック
-tile.RaitisModCore.DirtyLapislazuliBlock.name=汚れたラピスラズリブロック
+tile.RaitisModCore.DirtyOreBlock.0.name=汚れた石炭ブロック
+tile.RaitisModCore.DirtyOreBlock.1.name=汚れた鉄ブロック
+tile.RaitisModCore.DirtyOreBlock.2.name=汚れた金ブロック
+tile.RaitisModCore.DirtyOreBlock.3.name=汚れたレッドストーンブロック
+tile.RaitisModCore.DirtyOreBlock.4.name=汚れたダイアモンドブロック
+tile.RaitisModCore.DirtyOreBlock.5.name=汚れたエメラルドブロック
+tile.RaitisModCore.DirtyOreBlock.6.name=汚れたラピスラズリブロック
 
 item.RaitisModCore.EMC.0.name=1EMC
 item.RaitisModCore.EMC.1.name=2EMC
