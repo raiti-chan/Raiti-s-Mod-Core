@@ -3,9 +3,12 @@ package raiti.RaitisMod.Core.Recipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ShapedRecipes;
 import raiti.RaitisMod.Core.Block.RBlockRegister;
 import raiti.RaitisMod.Core.Item.RItemRegister;
+import raiti.RaitisMod.Core.RaitisModCore;
 
 /**
  * レシピレジスター
@@ -44,6 +47,23 @@ public class RecipeRegister {
 		GameRegistry.addRecipe(new ItemStack(RBlockRegister.SolidWaterBlock), "GGG", "GWG", "GGG", 'G', Blocks.glass, 'W', Items.water_bucket);
 		//=固形EMC======================================================================================================
 		addEmcItemRecipes();
+		
+		//=ブラックホールチェストのレシピ================================================================================================================
+		{
+			ItemStack[] itemStacks = new ItemStack[9];
+			String itemName;
+			boolean flag = false;
+			for (int i = 0; i < itemStacks.length; i++) {
+				itemName = RaitisModCore.CONFIG.getBlackHoleChestRecipes().getStringList()[i];
+				Item item;
+				if (itemName.equals("null")) item = null;
+				else item = (Item) Item.itemRegistry.getObject(itemName);
+				itemStacks[i] = new ItemStack(item);
+				if (item != null) flag = true;
+			}
+			ShapedRecipes blackHoleChestRecipes = new ShapedRecipes(3, 3, itemStacks, new ItemStack(RBlockRegister.alotmorechest));
+			if (flag) GameRegistry.addRecipe(blackHoleChestRecipes);
+		}
 	}
 	
 	

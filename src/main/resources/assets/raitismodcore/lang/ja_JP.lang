@@ -15,6 +15,7 @@ tile.RaitisModCore.DirtyOreBlock.3.name=汚れたレッドストーンブロッ�
 tile.RaitisModCore.DirtyOreBlock.4.name=汚れたダイアモンドブロック
 tile.RaitisModCore.DirtyOreBlock.5.name=汚れたエメラルドブロック
 tile.RaitisModCore.DirtyOreBlock.6.name=汚れたラピスラズリブロック
+tile.RaitisModCore.DirtyOreBlock.7.name=汚れたクオーツブロック
 
 item.RaitisModCore.EMC.0.name=1EMC
 item.RaitisModCore.EMC.1.name=2EMC

@@ -38,7 +38,7 @@ public class RaitisModCoreMain {
 	 * MOD Version
 	 */
 	@SuppressWarnings("WeakerAccess")
-	public static final String MOD_VERSION = "1.0.0";
+	public static final String MOD_VERSION = "1.0.0 a_2";
 	
 	/**
 	 * MOD MetaData

@@ -1,11 +1,11 @@
 #--------------------------------------------US-lang
 
-item.RaitisModCore.CompressedStone.0.name=CompressionStone x8
-item.RaitisModCore.CompressedStone.1.name=CompressionStone x64
+item.RaitisModCore.CompressedStone_0.name=CompressionStone x8
+item.RaitisModCore.CompressedStone_1.name=CompressionStone x64
 item.RaitisModCore.CompressedStoneIngot.name=CompressionStone Ingot
 tile.RaitisModCore.CompressedStoneIngotBlock.name=Block of CompressionStoneIngot
 
-ile.RaitisModCore.SolidWater.name=SolidWater
+tile.RaitisModCore.SolidWater.name=SolidWater
 
 item.RaitisModCore.OreCrusheHammer.name=Ore Crushe Hammer
 tile.RaitisModCore.DirtyOreBlock.0.name=Block of DirtyCoal
@@ -15,6 +15,7 @@ tile.RaitisModCore.DirtyOreBlock.3.name=Block of DirtyRedstone
 tile.RaitisModCore.DirtyOreBlock.4.name=Block of DirtyDiamond
 tile.RaitisModCore.DirtyOreBlock.5.name=Block of DirtyEmerald
 tile.RaitisModCore.DirtyOreBlock.6.name=Block of DirtyLapislazuli
+tile.RaitisModCore.DirtyOreBlock.7.name=Block of DirtyQuartz
 
 item.RaitisModCore.EMC.0.name=1EMC
 item.RaitisModCore.EMC.1.name=2EMC
