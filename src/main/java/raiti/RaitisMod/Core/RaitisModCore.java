@@ -57,8 +57,8 @@ public class RaitisModCore {
 	
 	static void posInit(FMLPostInitializationEvent event){
 		
-		if(CONFIG.getBooleanMapData("ProjectE") && Loader.isModLoaded("ProjectE")){
-			GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.EMC,1,0), net.minecraft.init.Blocks.cobblestone, ObjHandler.philosStone);
+		if(CONFIG.getBooleanMapData(ConfigRegister.BooleanMapKey.Cooperation_ProjectE) && Loader.isModLoaded("ProjectE")){
+			RecipeRegister.registeringCooperationProjectERecipe();
 		}
 		
 		FactoryRegister.RegisterPosInit(event);

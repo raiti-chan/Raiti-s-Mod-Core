@@ -1,6 +1,7 @@
 package raiti.RaitisMod.Core.Recipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import moze_intel.projecte.gameObjs.ObjHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -112,6 +113,11 @@ public class RecipeRegister {
 		GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.EMC, 2, 17), new ItemStack(RItemRegister.EMC, 1, 18));
 		GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.EMC, 2, 18), new ItemStack(RItemRegister.EMC, 1, 19));
 		GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.EMC, 2, 19), new ItemStack(RItemRegister.EMC, 1, 20));
+	}
+	
+	//==================================================================================================================
+	public static void registeringCooperationProjectERecipe() {
+		GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.EMC,1,0), net.minecraft.init.Blocks.cobblestone, ObjHandler.philosStone);
 	}
 	
 }

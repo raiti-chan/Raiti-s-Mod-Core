@@ -12,7 +12,11 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.StatCollector;
+import raiti.RaitisMod.Core.ConfigRegister;
 import raiti.RaitisMod.Core.Container.BlackHoleChestContainer;
+import raiti.RaitisMod.Core.RaitisModCore;
+
+import java.util.Arrays;
 
 /**
  * ブラックホールチェストのたいるえんちちー
@@ -32,8 +36,13 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	
 	private long size = 0L;
 	
+	private long oldSize = 0L;
+	
 	private ItemStack stack = null;
 	
+	private int[] splittedSize = new int[1];
+	
+	private static final int MAX_VIRTUAL_SLOTSIZE = RaitisModCore.CONFIG.getIntegerMapData(ConfigRegister.IntegerMapKey.BlackHoleChest_MaxVirtualSlot);
 	
 	public void setContainer(BlackHoleChestContainer container) {
 		this.container = container;
@@ -45,6 +54,7 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 		this.size = par1NBTTagCompound.getLong("Size");
 		NBTTagCompound compound = par1NBTTagCompound.getCompoundTag("Item");
 		this.stack = ItemStack.loadItemStackFromNBT(compound);
+		this.splitSize();
 	}
 	
 	@Override
@@ -76,6 +86,26 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	@Override
 	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
 		this.readFromNBT(pkt.func_148857_g());
+	}
+	
+	private void splitSize() {
+		if (this.size == this.oldSize) return;
+		if (this.size >= Integer.MAX_VALUE * MAX_VIRTUAL_SLOTSIZE) {
+			this.splittedSize = new int[MAX_VIRTUAL_SLOTSIZE];
+			Arrays.fill(this.splittedSize, Integer.MAX_VALUE);
+			return;
+		}
+		long splitSize = this.size / Integer.MAX_VALUE;
+		this.splittedSize = new int[splitSize <= 0 ? 1 : splitSize > MAX_VIRTUAL_SLOTSIZE ? MAX_VIRTUAL_SLOTSIZE : (int) splitSize];
+		long remainingSize = this.getSize();
+		int i;
+		for (i = 0; i < splittedSize.length; i++) {
+			this.splittedSize[i] = remainingSize > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int)remainingSize;
+			remainingSize -= Integer.MAX_VALUE;
+			if (remainingSize <= 0) break;
+		}
+		Arrays.fill(this.splittedSize, i, this.splittedSize.length, 0);
+		this.oldSize = this.size;
 	}
 	
 	/**
@@ -128,7 +158,7 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	
 	@Override
 	public int getSizeInventory() {
-		return 2;
+		return 1 + splittedSize.length;
 	}
 	
 	
@@ -140,10 +170,22 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 				ret.stackSize = 0;
 				return ret;
 			}
-			if (index == 2) {
-				return this.stack;
-			}
-			if (index == 1 && this.MAXSIZE == this.size) {
+			if (index >= 2) {
+				String callClassName = Thread.currentThread().getStackTrace()[2].getClassName();
+				if (callClassName.equals("appeng.util.inv.WrapperInventoryRange")) {
+					if (this.size < Integer.MAX_VALUE) {
+						if (index == 2) {
+							ItemStack retStack = this.stack.copy();
+							retStack.stackSize = (int) this.size;
+							return retStack;
+						}
+						else return null;
+					}
+					splitSize();
+					ItemStack retStack = this.stack.copy();
+					retStack.stackSize = this.splittedSize[index - 2];
+					return retStack;
+				}
 				return this.stack;
 			}
 		}
@@ -234,6 +276,16 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 				}
 				this.markDirty();
 				this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
+			} else if (index == 2) {//Applideの取り出し処理
+				if (stack == null) this.itemClear();
+				else {
+					if (this.size <= Integer.MAX_VALUE) this.size = stack.stackSize;
+					else {
+						this.size -= Integer.MAX_VALUE - stack.stackSize;
+					}
+				}
+				this.markDirty();
+				this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
 			}
 		}
 		
@@ -291,7 +343,11 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	
 	@Override
 	public int[] getAccessibleSlotsFromSide(int side) {
-		return new int[]{1, 2};
+		int[] ints = new int[this.getSizeInventory()];
+		for (int i = 0; i < ints.length; i++) {
+			ints[i] = i + 1;
+		}
+		return ints;
 	}
 	
 	@Override
@@ -301,6 +357,6 @@ public class BlackHoleChestTile extends TileEntity implements ISidedInventory {
 	
 	@Override
 	public boolean canExtractItem(int slot, ItemStack stack, int side) {
-		return slot == 2;
+		return slot >= 2;
 	}
 }
