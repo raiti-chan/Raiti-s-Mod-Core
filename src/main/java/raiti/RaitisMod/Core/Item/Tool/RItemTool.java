@@ -1,5 +1,6 @@
 package raiti.RaitisMod.Core.Item.Tool;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemTool;
 import raiti.RaitisMod.Core.Item.IRItem;
@@ -22,6 +23,7 @@ public class RItemTool extends ItemTool implements IRItem {
 	@SuppressWarnings("WeakerAccess")
 	protected RItemTool(float damageBase, RToolMaterial material, Set canHarvestBlock) {
 		super(damageBase, material.getMaterial(), canHarvestBlock);
+		this.setCreativeTab(CreativeTabs.tabTools);
 	}
 	
 	@SuppressWarnings("WeakerAccess")

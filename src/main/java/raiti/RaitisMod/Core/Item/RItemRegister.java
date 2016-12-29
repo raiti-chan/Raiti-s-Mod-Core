@@ -1,6 +1,8 @@
 package raiti.RaitisMod.Core.Item;
 
+import jdk.nashorn.internal.ir.Block;
 import net.minecraft.item.Item;
+import raiti.RaitisMod.Core.Item.Tool.CompressedStoneAxe;
 import raiti.RaitisMod.Core.Item.Tool.OreCrusheHammer;
 import raiti.RaitisMod.Core.Item.Tool.RItemTool;
 import raiti.RaitisMod.Core.Util.Annotations.NonRegister;
@@ -25,10 +27,13 @@ public class RItemRegister {
 	
 	//==================================================================================================================
 	public static final RItem Compressed_stone = new CompressedStone();
-	public static RItem Compressed_stone_ingot = ItemUtil.createItem("CompressedStoneIngot", "compressed_stone_ingot", CreativeTabs.tabMaterials);
-	public static RItem EMC = new EMCItems();
-	public static RItemTool OreCrusheHammer = new OreCrusheHammer();
+	public static final RItem Compressed_stone_ingot = ItemUtil.createItem("CompressedStoneIngot", "compressed_stone_ingot", CreativeTabs.tabMaterials);
+	public static final RItem EMC = new EMCItems();
+	public static final RItemTool OreCrusheHammer = new OreCrusheHammer();
 	
+	public static final RItemTool Compressed_stone_axe = new CompressedStoneAxe();
+	
+	public static final RItem Cutting_board_base = ItemUtil.createItem("CuttingBoardBase", "cutting_board_base", CreativeTabs.tabMaterials);
 	
 	//==================================================================================================================
 	
@@ -48,6 +53,7 @@ public class RItemRegister {
 				e.printStackTrace();
 			}
 		}
+		
 	}
 	
 	

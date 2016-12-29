@@ -4,7 +4,6 @@
 package raiti.RaitisMod.Core.Block;
 
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import raiti.RaitisMod.Core.Item.BlockItem.SimpleMetaItemBlock;
 import raiti.RaitisMod.Core.Util.Annotations.ItemBlockClass;
@@ -68,5 +67,7 @@ public class RBlockRegister {
 				e.printStackTrace();
 			}
 		}
+		
+		
 	}
 }
