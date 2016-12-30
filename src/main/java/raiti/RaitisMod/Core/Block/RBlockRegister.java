@@ -30,18 +30,20 @@ public class RBlockRegister {
 	}
 	
 	//==================================================================================================================
-	public static final RBlock comstonebl = BlockUtil.createBlock("CompressedStoneIngotBlock", "compressed_stone_ingot_block", CreativeTabs.tabBlock, Material.rock, 25.0F, 2000.0F, Block.soundTypeMetal, -1, -1.0F, "pickaxe", 3);
+	public static final RBlock Compressed_stone_ingot_block = BlockUtil.createBlock("CompressedStoneIngotBlock", "compressed_stone_ingot_block", CreativeTabs.tabBlock, Material.rock, 25.0F, 2000.0F, Block.soundTypeMetal, -1, -1.0F, "pickaxe", 3);
 	
 	private static final ItemStack[] DIRTY_ORE_BLOCK_DROP_ITEMS = {new ItemStack(Items.coal),
 			new ItemStack(Items.iron_ingot), new ItemStack(Items.gold_ingot), new ItemStack(Items.redstone),
 			new ItemStack(Items.diamond), new ItemStack(Items.emerald), new ItemStack(Items.dye, 1, 4), new ItemStack(Items.quartz)};
 	@ItemBlockClass(SimpleMetaItemBlock.class)
-	public static final RBlock dirtyOreBlock = new DirtyOreBlock(DIRTY_ORE_BLOCK_DROP_ITEMS, "DirtyOreBlock", "dirty_ore_block");
+	public static final RBlock Dirty_ore_block = new DirtyOreBlock(DIRTY_ORE_BLOCK_DROP_ITEMS, "DirtyOreBlock", "dirty_ore_block");
 	
-	public static final RBlock SolidWaterBlock = new SolidWaterBlock();
+	public static final RBlock Solid_water_block = new SolidWaterBlock();
 	
 	@ItemBlockClass(BlackHoleChestItem.class)
-	public static final RBlockContainer alotmorechest = new BlackHoleChestBlock();
+	public static final RBlockContainer Black_hole_chest_block = new BlackHoleChestBlock();
+	
+	public static final RBlock Cutting_board_block = new CuttingBoardBlock();
 	
 	
 	//==================================================================================================================

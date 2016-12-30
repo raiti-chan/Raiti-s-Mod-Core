@@ -44,3 +44,9 @@ GUI.RaitisModCore.BlackHoleChest.name=ブラックホールチェスト
 itemStack.RaitisModCore.BlackHoleChestItem.item.name=アイテム:
 itemStack.RaitisModCore.BlackHoleChestItem.size.name=サイズ:
 itemStack.RaitisModCore.BlackHoleChestItem.null.name=アイテム無し
+
+item.RaitisModCore.CuttingBoardBase.0.name=まな板用木材
+item.RaitisModCore.CuttingBoardBase.1.name=活性化した8倍まな板用木材
+item.RaitisModCore.CuttingBoardBase.2.name=活性化した64倍まな板用木材
+item.RaitisModCore.CuttingBoardBase.3.name=活性化した512倍まな板用木材
+GUI.RaitisModCore.CuttingBoard.name=まな板

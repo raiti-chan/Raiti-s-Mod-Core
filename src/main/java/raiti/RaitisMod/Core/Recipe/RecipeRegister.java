@@ -30,24 +30,32 @@ public class RecipeRegister {
 		GameRegistry.addRecipe(new ItemStack(RItemRegister.Compressed_stone, 1, 0), "SSS", "SDS", "SSS", 'S', Blocks.cobblestone, 'D', Blocks.dirt);
 		GameRegistry.addRecipe(new ItemStack(RItemRegister.Compressed_stone, 1, 1), "SSS", "SDS", "SSS", 'S', new ItemStack(RItemRegister.Compressed_stone, 1, 0), 'D', Blocks.dirt);
 		GameRegistry.addSmelting(new ItemStack(RItemRegister.Compressed_stone, 1, 1), new ItemStack(RItemRegister.Compressed_stone_ingot), 1F);
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.comstonebl), "iii", "iii", "iii", 'i', RItemRegister.Compressed_stone_ingot);
-		GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.Compressed_stone_ingot, 9), RBlockRegister.comstonebl);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Compressed_stone_ingot_block), "iii", "iii", "iii", 'i', RItemRegister.Compressed_stone_ingot);
+		GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.Compressed_stone_ingot, 9), RBlockRegister.Compressed_stone_ingot_block);
+		
+		//=圧縮石ツール=================================================================================================
+		GameRegistry.addRecipe(new ItemStack(RItemRegister.Compressed_stone_axe), "III", " S ", " S ", 'I', RItemRegister.Compressed_stone_ingot, 'S', Items.stick);
 		
 		//=鉱石粉砕ハンマー=============================================================================================
-		GameRegistry.addRecipe(new ItemStack(RItemRegister.OreCrusheHammer), " SN", " OS", "O  ", 'S', RItemRegister.Compressed_stone_ingot, 'N', Items.nether_star, 'O', Blocks.obsidian);
+		GameRegistry.addRecipe(new ItemStack(RItemRegister.Ore_crushe_hammer), " SN", " OS", "O  ", 'S', RItemRegister.Compressed_stone_ingot, 'N', Items.nether_star, 'O', Blocks.obsidian);
 		//=汚れた鉱石ブロック================================================================================================================
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.dirtyOreBlock, 1, 0), "SSS", "SIS", "SSS", 'S', RBlockRegister.comstonebl, 'I', Blocks.coal_block);
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.dirtyOreBlock, 1, 1), "SSS", "SIS", "SSS", 'S', RBlockRegister.comstonebl, 'I', Blocks.iron_block);
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.dirtyOreBlock, 1, 2), "SSS", "SIS", "SSS", 'S', RBlockRegister.comstonebl, 'I', Blocks.gold_block);
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.dirtyOreBlock, 1, 3), "SSS", "SIS", "SSS", 'S', RBlockRegister.comstonebl, 'I', Blocks.redstone_block);
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.dirtyOreBlock, 1, 4), "SSS", "SIS", "SSS", 'S', RBlockRegister.comstonebl, 'I', Blocks.diamond_block);
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.dirtyOreBlock, 1, 5), "SSS", "SIS", "SSS", 'S', RBlockRegister.comstonebl, 'I', Blocks.emerald_block);
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.dirtyOreBlock, 1, 6), "SSS", "SIS", "SSS", 'S', RBlockRegister.comstonebl, 'I', Blocks.lapis_block);
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.dirtyOreBlock, 1, 7), "SSS", "SIS", "SSS", 'S', RBlockRegister.comstonebl, 'I', Blocks.quartz_block);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Dirty_ore_block, 1, 0), "SSS", "SIS", "SSS", 'S', RBlockRegister.Compressed_stone_ingot_block, 'I', Blocks.coal_block);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Dirty_ore_block, 1, 1), "SSS", "SIS", "SSS", 'S', RBlockRegister.Compressed_stone_ingot_block, 'I', Blocks.iron_block);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Dirty_ore_block, 1, 2), "SSS", "SIS", "SSS", 'S', RBlockRegister.Compressed_stone_ingot_block, 'I', Blocks.gold_block);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Dirty_ore_block, 1, 3), "SSS", "SIS", "SSS", 'S', RBlockRegister.Compressed_stone_ingot_block, 'I', Blocks.redstone_block);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Dirty_ore_block, 1, 4), "SSS", "SIS", "SSS", 'S', RBlockRegister.Compressed_stone_ingot_block, 'I', Blocks.diamond_block);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Dirty_ore_block, 1, 5), "SSS", "SIS", "SSS", 'S', RBlockRegister.Compressed_stone_ingot_block, 'I', Blocks.emerald_block);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Dirty_ore_block, 1, 6), "SSS", "SIS", "SSS", 'S', RBlockRegister.Compressed_stone_ingot_block, 'I', Blocks.lapis_block);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Dirty_ore_block, 1, 7), "SSS", "SIS", "SSS", 'S', RBlockRegister.Compressed_stone_ingot_block, 'I', Blocks.quartz_block);
 		//=固形水源================================================================================================================
-		GameRegistry.addRecipe(new ItemStack(RBlockRegister.SolidWaterBlock), "GGG", "GWG", "GGG", 'G', Blocks.glass, 'W', Items.water_bucket);
+		GameRegistry.addRecipe(new ItemStack(RBlockRegister.Solid_water_block), "GGG", "GWG", "GGG", 'G', Blocks.glass, 'W', Items.water_bucket);
 		//=固形EMC======================================================================================================
 		addEmcItemRecipes();
+		
+		//=まな板関連===================================================================================================
+		GameRegistry.addRecipe(new ItemStack(RItemRegister.Cutting_board_base, 256, 1), "BBB", "BSB", "BBB", 'B', new ItemStack(RItemRegister.Cutting_board_base, 1, 0), 'S', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(RItemRegister.Cutting_board_base, 1, 2), "BBB", "BSB", "BBB", 'B', new ItemStack(RItemRegister.Cutting_board_base, 1, 1), 'S', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(RItemRegister.Cutting_board_base, 1, 3), "BBB", "BSB", "BBB", 'B', new ItemStack(RItemRegister.Cutting_board_base, 1, 2), 'S', Items.nether_star);
 		
 		//=ブラックホールチェストのレシピ================================================================================================================
 		{
@@ -62,7 +70,7 @@ public class RecipeRegister {
 				itemStacks[i] = new ItemStack(item);
 				if (item != null) flag = true;
 			}
-			ShapedRecipes blackHoleChestRecipes = new ShapedRecipes(3, 3, itemStacks, new ItemStack(RBlockRegister.alotmorechest));
+			ShapedRecipes blackHoleChestRecipes = new ShapedRecipes(3, 3, itemStacks, new ItemStack(RBlockRegister.Black_hole_chest_block));
 			if (flag) GameRegistry.addRecipe(blackHoleChestRecipes);
 		}
 	}
@@ -117,7 +125,7 @@ public class RecipeRegister {
 	
 	//==================================================================================================================
 	public static void registeringCooperationProjectERecipe() {
-		GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.EMC,1,0), net.minecraft.init.Blocks.cobblestone, ObjHandler.philosStone);
+		GameRegistry.addShapelessRecipe(new ItemStack(RItemRegister.EMC, 1, 0), net.minecraft.init.Blocks.cobblestone, ObjHandler.philosStone);
 	}
 	
 }

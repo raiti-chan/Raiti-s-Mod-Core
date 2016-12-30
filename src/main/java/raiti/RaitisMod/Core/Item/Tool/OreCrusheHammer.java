@@ -25,18 +25,18 @@ import net.minecraft.item.ItemStack;
  */
 public class OreCrusheHammer extends RItemTool{
 	
-	private static final Set canHarvestBlock = Sets.newHashSet(RBlockRegister.dirtyOreBlock);
+	private static final Set canHarvestBlock = Sets.newHashSet(RBlockRegister.Dirty_ore_block);
 	
 	public OreCrusheHammer() {
 		super(0, ORE_CRUSHE_HAMMER, canHarvestBlock);
-		this.setUnlocalizedName("OreCrusheHammer");
+		this.setUnlocalizedName("Ore_crushe_hammer");
 		this.setTextureName("ore_crushe_hammer");
 		
 	}
 	
 	@Override
 	public boolean func_150897_b(Block block) {
-		return block.getHarvestTool(0).equals("OreCrusheHammer");
+		return block.getHarvestTool(0).equals("Ore_crushe_hammer");
 	}
 	
 	@Override

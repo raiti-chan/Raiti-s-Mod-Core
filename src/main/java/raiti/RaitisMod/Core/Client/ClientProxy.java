@@ -59,7 +59,7 @@ public class ClientProxy extends CommonProxy {
 		// ブラックホールチェスト=======================================================================================
 		BlackHoleChestRenderer blackHoleChestRenderer = new BlackHoleChestRenderer();
 		ClientRegistry.bindTileEntitySpecialRenderer(BlackHoleChestTile.class, blackHoleChestRenderer);
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(RBlockRegister.alotmorechest), new BlackHoleChestItemRenderer(blackHoleChestRenderer, new BlackHoleChestTile()));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(RBlockRegister.Black_hole_chest_block), new BlackHoleChestItemRenderer(blackHoleChestRenderer, new BlackHoleChestTile()));
 		//==============================================================================================================
 	}
 }

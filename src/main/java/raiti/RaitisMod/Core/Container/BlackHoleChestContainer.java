@@ -22,6 +22,7 @@ import net.minecraft.item.ItemStack;
 public class BlackHoleChestContainer extends Container {
 	
 	
+	
 	private BlackHoleChestTile chest;
 	@SuppressWarnings("FieldCanBeLocal")
 	private InventoryPlayer playerInventry;
@@ -112,6 +113,7 @@ public class BlackHoleChestContainer extends Container {
 		return true;
 	}
 	
+	@SuppressWarnings("SameParameterValue")
 	private boolean mergeItemStackOnOut(ItemStack itemStack, int index, int end, boolean bool) {
 		boolean flag1 = false;
 		int k = index;
@@ -189,53 +191,55 @@ public class BlackHoleChestContainer extends Container {
 		
 		return flag1;
 	}
-}
-
-/**
- * ブラックホールチェストのスロット
- * <br>Created by Raiti-chan on 2016/11/18.
- *
- * @author Raiti-chan
- * @version 1.0.0
- * @since 1.0.0
- */
-class BlackHoleChestSlot extends Slot {
 	
 	/**
-	 * スロットのアクセスレベル
+	 * ブラックホールチェストのスロット
+	 * <br>Created by Raiti-chan on 2016/11/18.
+	 *
+	 * @author Raiti-chan
+	 * @version 1.0.0
+	 * @since 1.0.0
 	 */
-	private boolean in = false;
-	
-	/**
-	 * @param inventry インベントリー
-	 * @param index    スロットインデックス
-	 * @param x        スロット座標
-	 * @param y        スロット座標
-	 * @param in       スロットに挿入可能か
-	 */
-	BlackHoleChestSlot(IInventory inventry, int index, int x, int y, boolean in) {
-		super(inventry, index, x, y);
-		this.in = in;
-	}
-	
-	@Override
-	public boolean isItemValid(ItemStack inStack) {
-		if (this.in) {
-			BlackHoleChestTile tile = (BlackHoleChestTile) this.inventory;
-			if (tile.getStackInSlot(0) == null) {
-				return true;
-			} else if (tile.getStackInSlot(0).isItemEqual(inStack) && ItemStack.areItemStackTagsEqual(tile.getItemType(), inStack) && tile.getSize() + inStack.stackSize <= tile.getMaxSize()) {
-				return true;
-			}
+	public static class BlackHoleChestSlot extends Slot {
+		
+		/**
+		 * スロットのアクセスレベル
+		 */
+		private boolean in = false;
+		
+		/**
+		 * @param inventry インベントリー
+		 * @param index    スロットインデックス
+		 * @param x        スロット座標
+		 * @param y        スロット座標
+		 * @param in       スロットに挿入可能か
+		 */
+		BlackHoleChestSlot(IInventory inventry, int index, int x, int y, boolean in) {
+			super(inventry, index, x, y);
+			this.in = in;
 		}
 		
-		return false;
-	}
-	
-	@Override
-	public int getSlotStackLimit() {
-		BlackHoleChestTile tile = (BlackHoleChestTile) this.inventory;
-		long limit = tile.getMaxSize() - tile.getSize();
-		return limit < 64 ? (int) limit : 64;
+		@Override
+		public boolean isItemValid(ItemStack inStack) {
+			if (this.in) {
+				BlackHoleChestTile tile = (BlackHoleChestTile) this.inventory;
+				if (tile.getStackInSlot(0) == null) {
+					return true;
+				} else if (tile.getStackInSlot(0).isItemEqual(inStack) && ItemStack.areItemStackTagsEqual(tile.getItemType(), inStack) && tile.getSize() + inStack.stackSize <= tile.getMaxSize()) {
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		@Override
+		public int getSlotStackLimit() {
+			BlackHoleChestTile tile = (BlackHoleChestTile) this.inventory;
+			long limit = tile.getMaxSize() - tile.getSize();
+			return limit < 64 ? (int) limit : 64;
+		}
 	}
 }
+
+

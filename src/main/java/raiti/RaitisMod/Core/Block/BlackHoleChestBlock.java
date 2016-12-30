@@ -10,9 +10,9 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.IBlockAccess;
+import raiti.RaitisMod.Core.Client.Gui.BlackHoleChestGUI;
 import raiti.RaitisMod.Core.RaitisModCoreMain;
 import raiti.RaitisMod.Core.TileEntity.BlackHoleChestTile;
-import raiti.RaitisMod.Core.Client.Gui.GuiHandler;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -49,7 +49,7 @@ public class BlackHoleChestBlock extends RBlockContainer {
 		BlackHoleChestTile tile = (BlackHoleChestTile) world.getTileEntity(x, y, z);
 		
 		if (tile != null & !world.isRemote) {
-			player.openGui(RaitisModCoreMain.INSTANCE, GuiHandler.AlotmoreChestGUI, world, x, y, z);
+			player.openGui(RaitisModCoreMain.INSTANCE, BlackHoleChestGUI.GUI_ID, world, x, y, z);
 		}
 		
 		

@@ -37,7 +37,7 @@ public class DirtyOreBlock extends RBlock {
 		setBlockName(blockName);
 		setBlockTextureName(textureName);
 		setHardness(4F);
-		setHarvestLevel("OreCrusheHammer", 2);
+		setHarvestLevel("Ore_crushe_hammer", 2);
 		this.droppedItems = droppedItems;
 		this.icons = new IIcon[droppedItems.length];
 	}

@@ -26,6 +26,8 @@ import net.minecraft.util.ResourceLocation;
 @SuppressWarnings("WeakerAccess")
 public class BlackHoleChestGUI extends GuiContainer {
 	
+	public static final int GUI_ID = 0;
+	
 	private static final ResourceLocation texture = new ResourceLocation(RaitisModCoreMain.MOD_ID + ":textures/gui/blackhole_chest_gui.png");
 	
 	private IInventory lowerChestInventory, blackHoleChestInventory;

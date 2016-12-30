@@ -44,3 +44,9 @@ GUI.RaitisModCore.BlackHoleChest.name=BlackHoleChest
 itemStack.RaitisModCore.BlackHoleChestItem.item.name=Item:
 itemStack.RaitisModCore.BlackHoleChestItem.size.name=Size:
 itemStack.RaitisModCore.BlackHoleChestItem.null.name=NonItem
+
+item.RaitisModCore.CuttingBoardBase.0.name=Cutting Board Base
+item.RaitisModCore.CuttingBoardBase.1.name=Activated 8 times Cutting Board Base
+item.RaitisModCore.CuttingBoardBase.2.name=Activated 64 times Cutting Board Base
+item.RaitisModCore.CuttingBoardBase.3.name=Activated 512 times Cutting Board Base
+GUI.RaitisModCore.CuttingBoard.name=CuttingBoard

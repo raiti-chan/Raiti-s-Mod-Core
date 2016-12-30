@@ -5,8 +5,10 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockWood;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import raiti.RaitisMod.Core.Item.RItemRegister;
@@ -44,8 +46,10 @@ public class CompressedStoneAxe extends RItemTool {
 				ItemStack stack = new ItemStack(RItemRegister.Cutting_board_base, world.rand.nextInt(4) + 1);
 				EntityItem item = new EntityItem(world, x + 0.5D, y + 0.5D, z + 0.5D, stack);
 				world.spawnEntityInWorld(item);
+				world.setBlockToAir(x,y,z);
+				world.markBlockForUpdate(x,y,z);
 			}
-			
+			Minecraft.getMinecraft().renderGlobal.playAuxSFX(null, 2001, x, y, z, Block.getIdFromBlock(block));
 			return false;
 		}
 		
